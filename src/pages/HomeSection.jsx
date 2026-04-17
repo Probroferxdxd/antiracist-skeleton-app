@@ -1,4 +1,4 @@
-export default function Home() {
+export default function HomeSection() {
   return (
     <div className="page-container">
       <h1>Inicio</h1>

@@ -1,23 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import About from './pages/About'
-import Services from './pages/Services'
-import Contact from './pages/Contact'
-import Resources from './pages/Resources'
-import './App.css'
+import HomeSection from './pages/HomeSection'
+import About from './pages/Sesion1'
+import Services from './pages/Sesion2'
+import Contact from './pages/Sesion4'
+import Resources from './pages/Sesion3'
+import './App.scss'
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/resources" element={<Resources />} />
-      </Routes>
+      <div className="container">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomeSection />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/resources" element={<Resources />} />
+        </Routes>
+      </div>
     </Router>
   )
 }
