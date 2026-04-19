@@ -1,10 +1,19 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import HomeSection from './pages/HomeSection'
-import About from './pages/Sesion1'
-import Services from './pages/Sesion2'
-import Contact from './pages/Sesion4'
-import Resources from './pages/Sesion3'
+import Sesion1 from './pages/Sesion1'
+import Sesion2 from './pages/Sesion2'
+import Sesion3 from './pages/Sesion3'
+import Sesion4 from './pages/Sesion4'
+import Sesion5 from './pages/Sesion5'
+import Sesion6 from './pages/Sesion6'
+import Sesion7 from './pages/Sesion7'
+import Sesion8 from './pages/Sesion8'
+import Sesion9 from './pages/Sesion9'
+import Sesion10 from './pages/Sesion10'
+import Sesion11 from './pages/Sesion11'
+import Sesion12 from './pages/Sesion12'
+
 import './App.scss'
 
 function App() {
@@ -13,11 +22,20 @@ function App() {
       <div className="container">
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomeSection />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/resources" element={<Resources />} />
+          <Route path="/antiracist-skeleton-app/" element={<HomeSection />} />
+          <Route path="/antiracist-skeleton-app/sesion1" element={<Sesion1 />} />
+          <Route path="/antiracist-skeleton-app/sesion2" element={<Sesion2 />} />
+          <Route path="/antiracist-skeleton-app/sesion3" element={<Sesion3 />} />
+          <Route path="/antiracist-skeleton-app/sesion4" element={<Sesion4 />} />
+          <Route path="/antiracist-skeleton-app/sesion5" element={<Sesion5 />} />
+          <Route path="/antiracist-skeleton-app/sesion6" element={<Sesion6 />} />
+          <Route path="/antiracist-skeleton-app/sesion7" element={<Sesion7 />} />
+          <Route path="/antiracist-skeleton-app/sesion8" element={<Sesion8 />} />
+          <Route path="/antiracist-skeleton-app/sesion9" element={<Sesion9 />} />
+          <Route path="/antiracist-skeleton-app/sesion10" element={<Sesion10 />} />
+          <Route path="/antiracist-skeleton-app/sesion11" element={<Sesion11 />} />
+          <Route path="/antiracist-skeleton-app/sesion12" element={<Sesion12 />} />
+          
         </Routes>
       </div>
     </Router>

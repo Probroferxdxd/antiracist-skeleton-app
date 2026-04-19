@@ -1,8 +1,8 @@
-export default function Resources() {
+export default function Sesion3() {
   return (
     <div className="page-container">
-      <h1>Recursos</h1>
-      <p>Accede a nuestros recursos útiles.</p>
+      <h1>Sesión 3</h1>
+      <p>Contenido de la tercera sesión.</p>
     </div>
   )
 }
