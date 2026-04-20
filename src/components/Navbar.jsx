@@ -102,7 +102,6 @@ export default function Navbar() {
                   className={`navbar-link ${item.subitems ? "navbar-link--no-hover" : ""}`}
                 >
                   <div className="information-content">
-                    <span className="items-icon">{item.icon}</span>
                     <span
                       className="items-text"
                       onClick={(e) => toggleSubmenu(index, e)}
