@@ -10,10 +10,28 @@ import {
   ChevronDown,
 } from "lucide-react";
 import "./Navbar.scss";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Empathize from "../pages/Empathize";
+import Define from "../pages/Define";
+import Ideation from "../pages/Ideation";
+import Development from "../pages/Development";
+import Prototype from "../pages/Prototype";
 
 export default function Navbar() {
   const [openSubmenus, setOpenSubmenus] = useState({});
+
+  const { scrollY } = useScroll();
+  const backgroundColor = useTransform(
+    scrollY,
+    [0, 100],
+    ["rgba(0, 0, 0, 0)", "rgba(0, 0, 0, 0.7)"],
+  );
+
+  const backdropFilter = useTransform(
+    scrollY,
+    [0, 100],
+    ["blur(0px)", "blur(12px)"],
+  );
 
   const toggleSubmenu = (index, e) => {
     e.preventDefault();
@@ -32,6 +50,9 @@ export default function Navbar() {
     {
       name: "Empathize",
       icon: <Search />,
+      link: "/antiracist-skeleton-app/empathize",
+      element: <Empathize />,
+    
       subitems: [
         {
           name: "Sesión 1",
@@ -50,6 +71,8 @@ export default function Navbar() {
     {
       name: "Define",
       icon: <Goal />,
+      link: "/antiracist-skeleton-app/define",
+      element: <Define />,
       subitems: [
         {
           name: "Sesión 4",
@@ -62,8 +85,10 @@ export default function Navbar() {
       ],
     },
     {
-      name: "Ideate",
+      name: "Ideation",
       icon: <Lightbulb />,
+      link: "/antiracist-skeleton-app/ideation",
+      element: <Ideation />,
       subitems: [
         {
           name: "Sesión 6",
@@ -78,17 +103,42 @@ export default function Navbar() {
     {
       name: "Development",
       icon: <Settings />,
-      subitems: [],
+      link: "/antiracist-skeleton-app/development",
+      element: <Development />,
+      subitems: [
+        {
+          name: "Sesión 8",
+          link: "/antiracist-skeleton-app/sesion8",
+        },
+        {
+          name: "Sesión 9",
+          link: "/antiracist-skeleton-app/sesion9",
+        },
+        {
+          name: "Sesión 10",
+          link: "/antiracist-skeleton-app/sesion10",
+        },
+        {
+          name: "Sesión 11",
+          link: "/antiracist-skeleton-app/sesion11",
+        },
+        {
+          name: "Sesión 12",
+          link: "/antiracist-skeleton-app/sesion12",
+        },
+      ],
     },
     {
       name: "Prototype",
       icon: <Box />,
+      link: "/antiracist-skeleton-app/prototype",
+      element: <Prototype />,
       subitems: [],
     },
   ];
 
   return (
-    <nav className="navbar">
+    <motion.nav className="navbar" style={{ backgroundColor, backdropFilter }}>
       <div className="navbar-container">
         <div className="navbar-logo">
           <Link to="/antiracist-skeleton-app/">MyApp</Link>
@@ -97,17 +147,9 @@ export default function Navbar() {
           {navbarElements.map((item, index) => (
             <li key={index} className="navbar-item">
               <div className="items-information">
-                <Link
-                  to={item.link || "#"}
-                  className={`navbar-link ${item.subitems ? "navbar-link--no-hover" : ""}`}
-                >
+                <Link to={item.link || "#"} className="navbar-link">
                   <div className="information-content">
-                    <span
-                      className="items-text"
-                      onClick={(e) => toggleSubmenu(index, e)}
-                    >
-                      {item.name}
-                    </span>
+                    <span className="items-text">{item.name}</span>
                   </div>
                 </Link>
                 {item.subitems && (
@@ -116,7 +158,9 @@ export default function Navbar() {
                     onClick={(e) => toggleSubmenu(index, e)}
                     style={{ cursor: "pointer" }}
                   >
-                    <ChevronDown />
+                    <Link to="#" className="navbar-link">
+                      <ChevronDown />
+                    </Link>
                   </span>
                 )}
               </div>
@@ -142,6 +186,6 @@ export default function Navbar() {
           ))}
         </ul>
       </div>
-    </nav>
+    </motion.nav>
   );
 }

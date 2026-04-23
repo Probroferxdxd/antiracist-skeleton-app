@@ -1,0 +1,39 @@
+.empathize-content {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+width: 100%    ;
+  .empathize-title-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+    margin-bottom: 20px;
+  }
+
+  .emphatize-features-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: green;
+     width: 100%;
+    .empathize-info-h2 {
+      position: absolute;
+      top: 20px; // Se queda en la parte superior del área sticky
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .empathize-hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

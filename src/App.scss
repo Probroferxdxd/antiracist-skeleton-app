@@ -4,6 +4,16 @@
   min-height: 100vh;
   background-color: blue;
 
+  .entrance-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 9999;
+  }
+
   .page-container {
     width: 100%;
     display: flex;
@@ -16,90 +26,299 @@
     .home-container {
       position: relative;
       width: 100%;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
       background: rgba(0, 0, 0, 1);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
 
-      padding: 100px;
-      .text-section {
-        h1,
-        h2 {
-          position: relative;
-          z-index: 1;
-          color: #fff;
-          font-size: 60px;
-        }
-
-        h2 {
-          font-size: 36px;
-        }
-      }
-
-      .carrousel {
-        position: absolute;
-        z-index: 1;
+      .homepage-section-1 {
+        width: 100%;
+        height: 100vh;
         display: flex;
-        gap: 20px;
-        margin-top: 20px;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        bottom: 0px;
-        right: 10px;
-        .comment-section {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          color: #fff;
-          margin-bottom: 20px;
-        }
-        .carrousel-element {
-          height: 60px; // Altura de la ventana visible
-          overflow: hidden; // Oculta los elementos que no están en el foco
-          display: flex;
-          flex-direction: column;
-          position: relative;
+        padding: 50px;
+        position: relative;
 
-          .carrousel-item {
-            flex-shrink: 0;
-            height: 40px; // Altura de cada elemento
-            margin-bottom: 20px; // Espacio entre elementos (Total 60px por paso)
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0px 20px;
-            display: flex;
-            justify-content: center;
-            align-self: start;
-            align-items: center;
-            border-radius: 10px;
+        .text-section {
+          h1,
+          h2 {
+            position: relative;
+            z-index: 1;
             color: #fff;
-            font-size: 24px;
-            transition: background 0.3s ease;
-            animation: carousel-vertical 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+            font-size: 60px;
+            width: 720px;
+          }
 
-            &:hover {
-              background: rgba(255, 255, 255, 0.4);
+          h2 {
+            font-size: 36px;
+          }
+        }
+
+        .carrousel {
+          position: absolute;
+          z-index: 1;
+          display: flex;
+          gap: 20px;
+          margin-top: 20px;
+          align-items: center;
+          bottom: 0px;
+          right: 10px;
+          .comment-section {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: #fff;
+            margin-bottom: 20px;
+          }
+          .carrousel-element {
+            height: 60px; // Altura de la ventana visible
+            overflow: hidden; // Oculta los elementos que no están en el foco
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            .carrousel-item {
+              flex-shrink: 0;
+              height: 40px; // Altura de cada elemento
+              margin-bottom: 20px; // Espacio entre elementos (Total 60px por paso)
+              background: rgba(255, 255, 255, 0.2);
+              padding: 0px 20px;
+              display: flex;
+              justify-content: center;
+              align-self: start;
+              align-items: center;
+              border-radius: 10px;
+              color: #fff;
+              font-size: 24px;
+              transition: background 0.3s ease;
+              animation: carousel-vertical 12s
+                cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+
+              &:hover {
+                background: rgba(255, 255, 255, 0.4);
+              }
             }
           }
         }
-      }
 
-      @keyframes carousel-vertical {
-        0%, 20% { transform: translateY(0); }
-        25%, 45% { transform: translateY(-60px); }
-        50%, 70% { transform: translateY(-120px); }
-        75%, 95% { transform: translateY(-180px); }
-        100% { transform: translateY(0); }
+        @keyframes carousel-vertical {
+          0%,
+          15% {
+            transform: translateY(0);
+          }
+          20%,
+          40% {
+            transform: translateY(-60px);
+          }
+          45%,
+          65% {
+            transform: translateY(-120px);
+          }
+          65%,
+          70% {
+            transform: translateY(-180px);
+          }
+          75%,
+          90% {
+            transform: translateY(-240px);
+          }
+          95%,
+          100% {
+            transform: translateY(0);
+          }
+        }
+        .background-video {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.5;
+          z-index: 0;
+        }
       }
-      .background-video {
-        position: absolute;
-        top: 0;
-        left: 0;
+      .homepage-section-2 {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.5;
-        z-index: 0;
+        height: 100vh;
+        position: relative;
+        display: flex;
+
+        div {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          color: #fff;
+          padding: 100px;
+        }
+
+        .text-section {
+          font-size: 40px;
+          text-align: justify;
+        }
+
+        .image-container {
+          .image-element {
+            width: 100%;
+            height: 100%;
+            background: url("https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19715160/GettyImages_515177654.jpg?quality=90&strip=all&crop=0,0,100,100");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+          }
+        }
+      }
+      .homepage-section-3 {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        gap: 20px;
+        padding: 120px;
+
+        .vertical-bar {
+          width: 1px;
+          height: 100%;
+          background: #fff;
+          margin: 0 20px;
+        }
+        .text-section {
+          width: 50%;
+          font-size: 20px;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          h2 {
+            font-size: 90px;
+          }
+          p {
+            width: 70%;
+            font-size: 16px;
+          }
+        }
+        .pictures-section {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          gap: 20px;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          .image-1 {
+            width: 95%;
+            height: 600px;
+            background: url("https://st4.depositphotos.com/15257832/38047/i/450/depositphotos_380472454-stock-photo-hoboken-usa-june-5th-2020.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 3;
+            top: 0px;
+            left: 50px;
+          }
+          .image-2 {
+            width: 45%;
+            height: 300px;
+            background: url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQe5Rma6b6H2-VGQFOnGf_4gtGSs-s_y1orRdeLAi6fX0koY7fq");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 3;
+            top: 200px;
+            left: -150px;
+          }
+        }
+      }
+      .homepage-section-4{
+          padding: 70px;
+          display: flex;
+          color:#fff;
+          flex-direction: column;
+          width: 100%;
+          gap: 30px;
+          height: 70vh;
+          .text-section{
+              p{
+                    font-size: 32px;
+                    width: 70%;
+              }
+          }
+
+          .phases-section{
+               display: flex;
+               gap: 20px;
+               width: 100%;
+               padding: 50px;
+               justify-content: space-between;
+
+               .phase-element{
+                    display: flex;
+                    gap: 20px;
+                    align-items: center;
+
+                    .phase-icon{
+                         width: 60px;
+                         height: 60px;
+                         background: rgba(255,255,255,0.2);
+                         display: flex;
+                         justify-content: center;
+                         align-items: center;
+                         border-radius: 10px;
+
+                         svg{
+                              color:#fff;
+                              width: 30px;
+                              height: 30px;
+                         }
+                    }
+
+                    .phase-text{
+                         h3{
+                              font-size: 24px;
+                              margin-bottom: 5px;
+                         }
+                         p{
+                              font-size: 16px;
+                              color:#ccc;
+                         }
+                    }
+
+                    .phase-bar{
+                         width: 3px;
+                         height: 120px;
+                         background: #fff;
+                    }
+               }
+          }
+      }
+      .homepage-section-5{
+           width: 100%;
+               height: 150vh;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               color: #fff;
+               background-color: #fff;
+               gap: 20px;
+               padding: 120px;
+
+          .image-element{
+               background: url("https://static.vecteezy.com/system/resources/previews/005/412/405/non_2x/good-world-logo-template-illustration-sustainable-development-goals-free-vector.jpg");
+               background-size: cover;
+               background-position: center;
+               background-repeat: no-repeat;
+               width: 700px;
+               height: 700px;
+          }
       }
     }
   }
