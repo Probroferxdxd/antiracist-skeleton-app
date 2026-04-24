@@ -1,8 +1,9 @@
+import SessionTemplate from "../components/SeccionTemplate"
+
 export default function Sesion11() {
   return (
-    <div className="page-container">
-      <h1>Sesión 11</h1>
-      <p>Contenido de la undécima sesión.</p>
-    </div>
+    <SessionTemplate title={"Seccion 11"}>
+      <div style={{ color: "#fff" }}>Hello world</div>
+    </SessionTemplate>
   )
 }
