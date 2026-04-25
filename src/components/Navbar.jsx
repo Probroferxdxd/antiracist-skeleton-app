@@ -66,14 +66,6 @@ export default function Navbar() {
           name: "Sesión 3",
           link: "/antiracist-skeleton-app/sesion3",
         },
-      ],
-    },
-    {
-      name: "Define",
-      icon: <Goal />,
-      link: "/antiracist-skeleton-app/define",
-      element: <Define />,
-      subitems: [
         {
           name: "Sesión 4",
           link: "/antiracist-skeleton-app/sesion4",
