@@ -21,7 +21,7 @@ export default function Sesion1() {
   return (
     <SeccionTemplate title={"Seccion 1"}>
       <div className="title-section">
-        <h2>
+        <h2 style={{color: "#fff"}}>
           RECOLECTING INFORMATION TO EMPATHIZE - Completing our "TED TALK"
           worksheet.
         </h2>
