@@ -1,9 +1,10 @@
-.information-section {
+.information-section-seccion-5 {
   display: grid;
   grid-template-columns: repeat(6, 1fr); // Base de 6 para permitir divisiones de 2 y 3
   gap: 30px;
   width: 100%;
-  padding: 40px 5%;
+  padding: 60px 10%;
+
 
   .survey-card {
     background: rgba(255, 255, 255, 0.05);

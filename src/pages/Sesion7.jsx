@@ -1,4 +1,5 @@
 import SessionTemplate from "../components/SeccionTemplate";
+import "../components/sessions-styles/Session7.scss"
 
 export default function Sesion7() {
   const ideasSection = [
@@ -31,7 +32,27 @@ export default function Sesion7() {
           using creative thinking techniques.
         </h2>
       </div>
-      <div className="information-section"></div>
+      <div className="information-section-seccion-7">
+        {/* Columna Izquierda: Segundo elemento (Index 1) */}
+        <div className="column left-column">
+          <div className="idea-card">
+            <h3 className="idea-title">{ideasSection[1].title}</h3>
+            <p className="idea-description">{ideasSection[1].description}</p>
+            <img src={ideasSection[1].imageSrc} alt={ideasSection[1].title} className="idea-image" />
+          </div>
+        </div>
+
+        {/* Columna Derecha: Primer y Tercer elemento (Index 0 y 2) */}
+        <div className="column right-column">
+          {[ideasSection[0], ideasSection[2]].map((idea, idx) => (
+            <div key={idx} className="idea-card">
+              <h3 className="idea-title">{idea.title}</h3>
+              <p className="idea-description">{idea.description}</p>
+              <img src={idea.imageSrc} alt={idea.title} className="idea-image" />
+            </div>
+          ))}
+        </div>
+      </div>
     </SessionTemplate>
   );
 }

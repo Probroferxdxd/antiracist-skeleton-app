@@ -1,4 +1,4 @@
-.title-section{
+.title-section-seccion-2{
      display: flex;
      flex-direction: column;
      justify-content: center;
@@ -24,11 +24,12 @@
      }
 }
 
-.information-section {
+.information-section-seccion-2 {
      max-width: 1200px;
      margin: 0 auto;
      padding: 40px 20px;
      display: grid;
+     background-color: red;
      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
      gap: 30px;
 

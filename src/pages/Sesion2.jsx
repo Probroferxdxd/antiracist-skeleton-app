@@ -1,16 +1,17 @@
 import SesionTemplate from "../components/SeccionTemplate";
+import "../App.scss";
 import "../components/sessions-styles/Session2.scss";
 
 export default function Sesion2() {
   return (
     <SesionTemplate title={"Seccion 2"}>
-      <div className="title-section">
+      <div className="title-section title-section-seccion-2">
         <h2>
           OBJECTIVE: Read about the UN's Sustainable Development Goals to share
           your opinion in a blog entry.
         </h2>
       </div>
-      <div className="information-section">
+      <div className="information-section-seccion-2">
         <p className="p-element p-el-1">
           What is the main objective of SDG 5? The main objective of Sustainable
           Development Goals Goal 5 is to achieve gender equality and empower all

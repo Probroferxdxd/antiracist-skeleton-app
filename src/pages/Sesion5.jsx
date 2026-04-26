@@ -134,7 +134,7 @@ export default function Sesion5() {
         <div className="image-element"></div>
         <p className="description-element"></p>
       </div>
-      <div className="information-section">
+      <div className="information-section-seccion-5">
         {chartArrayData.map((data, index) => (
           <div key={index} className="survey-card">
             <h3 className="survey-question">{data.question}</h3>

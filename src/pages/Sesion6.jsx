@@ -1,5 +1,6 @@
 import SessionTemplate from "../components/SeccionTemplate"
 import "../components/sessions-styles/Session6.scss"
+import "../App.scss"
 import {motion, useScroll, useTransform} from "framer-motion"
 import { useRef } from "react"
 
@@ -24,7 +25,7 @@ export default function Sesion6() {
         <h2>OBJECTIVE: "Recognize who the people involved are, what they need, and how we can help them."</h2>
       </div>
       <div className="scroll-wrapper" ref={containerRef} style={{ height: "200vh" }}>
-        <div className="collage-section">
+        <div className="collage-section-seccion-6">
           <motion.div className="image-1" style={{ opacity: opacity1, scale: scale1 }}></motion.div>
           <motion.div className="image-2" style={{ opacity: opacity2, scale: scale2 }}></motion.div>
         </div>  

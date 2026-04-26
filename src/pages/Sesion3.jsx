@@ -64,7 +64,7 @@ export default function Sesion3() {
       </div>
       
       {/* El contenedor principal controla la altura del scroll */}
-      <div className="information-section" ref={containerRef} style={{ height: `${paragraphs.length * 100}vh` }}>
+      <div className="information-section-seccion-3" ref={containerRef} style={{ height: `${paragraphs.length * 100}vh` }}>
         <div className="image-section">
           <div className="img-element"></div>
         </div>

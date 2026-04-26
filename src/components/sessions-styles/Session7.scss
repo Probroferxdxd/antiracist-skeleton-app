@@ -1,0 +1,67 @@
+.information-section-seccion-7 {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  min-height: 100vh;
+  gap: 30px;
+  padding: 40px 5%;
+  align-items: stretch; // Esto asegura que la columna izquierda y derecha midan lo mismo
+
+  .column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .left-column {
+    .idea-card {
+      height: 100%; // Hace que la tarjeta única ocupe toda la altura disponible
+      justify-content: center;
+    }
+  }
+
+
+  .idea-card {
+    display: flex;
+    flex-direction: column; // Título -> Párrafo -> Imagen
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .idea-title {
+      color: #fff;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .idea-description {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+
+    .idea-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      background: rgba(0,0,0,0.2); // Placeholder si no hay imagen
+      min-height: 150px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .information-section {
+    flex-direction: column;
+    .column { width: 100%; }
+  }
+}

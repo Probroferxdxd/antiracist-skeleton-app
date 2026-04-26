@@ -20,7 +20,7 @@ export default function Sesion1() {
 
   return (
     <SeccionTemplate title={"Seccion 1"}>
-      <div className="title-section">
+      <div className="title-section title-section-seccion-1">
         <h2>
           RECOLECTING INFORMATION TO EMPATHIZE - Completing our "TED TALK"
           worksheet.
@@ -30,7 +30,7 @@ export default function Sesion1() {
           and “identity” in order to build empathy among us.
         </p>
       </div>
-      <div className="multimedia-section">
+      <div className="multimedia-section-seccion-1">
         <iframe
           width="560"
           height="315"

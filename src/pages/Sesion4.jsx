@@ -67,7 +67,7 @@ export default function Sesion4() {
       <div className="title-section">
         <h2>OBJECTIVE: Write the final version of your expository text.</h2>
       </div>
-      <div className="information-section">
+      <div className="information-section-seccion-4">
           {expositoryTextsArray.map((expositoryText, index) => (
             <div className="expository-element" key={index}>
               <div className="expository-text">
