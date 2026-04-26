@@ -1,6 +1,45 @@
+import { motion } from "framer-motion";
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts';
 import "../components/sessions-styles/Session5.scss";
 import "../App.scss";
 import SessionTemplate from "../components/SeccionTemplate"
+
+const InteractivePieChart = ({ answers }) => {
+  const colors = ["#6366f1", "#10b981", "#f59e0b", "#ec4899", "#ffffff"];
+
+  return (
+    <div className="pie-chart-container-session-5">
+      <ResponsiveContainer width="100%" height={250}>
+        <PieChart>
+          <Pie
+            data={answers}
+            cx="50%"
+            cy="50%"
+            innerRadius={60}
+            outerRadius={80}
+            paddingAngle={5}
+            dataKey="percentage"
+            nameKey="option"
+            animationBegin={0}
+            animationDuration={1500}
+          >
+            {answers.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % colors.length]} stroke="none" />
+            ))}
+          </Pie>
+          <Tooltip 
+            contentStyle={{ 
+              backgroundColor: '#1a1a1a', 
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '8px'
+            }}
+          />
+          <Legend iconType="circle" />
+        </PieChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
 
 export default function Sesion5() {
 
@@ -138,19 +177,7 @@ export default function Sesion5() {
         {chartArrayData.map((data, index) => (
           <div key={index} className="survey-card">
             <h3 className="survey-question">{data.question}</h3>
-            <div className="survey-results">
-              {data.answers.map((ans, aIndex) => (
-                <div key={aIndex} className="answer-item">
-                  <div className="answer-info">
-                    <span className="option">{ans.option}</span>
-                    <span className="percentage">{ans.percentage}%</span>
-                  </div>
-                  <div className="progress-bar">
-                    <div className="progress-fill" style={{ width: `${ans.percentage}%` }}></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <InteractivePieChart answers={data.answers} />
           </div>
         ))}
       </div>

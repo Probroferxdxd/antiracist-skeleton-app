@@ -60,7 +60,7 @@ export default function HomeSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9, duration: 1 }}
             >
-              The antiracist skeleton
+              The anti-discriminatory skeleton
             </motion.h1>
           </div>
 

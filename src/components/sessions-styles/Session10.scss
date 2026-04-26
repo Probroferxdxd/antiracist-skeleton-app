@@ -1,0 +1,78 @@
+.information-section-seccion-10 {
+  width: 100%;
+  padding: 80px 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: #fff;
+
+  .paragraphs-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, minmax(180px, auto));
+    gap: 25px;
+    width: 100%;
+    
+    // Definimos el layout con nombres de áreas para un control total
+    grid-template-areas: 
+      "area-1 area-1 area-2 area-2"
+      "area-3 area-3 area-4 area-5";
+
+    .paragraph-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      flex-direction: column;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      gap: 20px;
+
+      p {
+        font-size: 0.8rem;
+        line-height: 1.7;
+        margin: 0;
+        font-weight: 300;
+        z-index: 1;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.4);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      }
+
+      // Clases específicas que el array debe aplicar a cada elemento
+      &.p1 { grid-area: area-1; border-top: 3px solid #6366f1; }
+      &.p2 { grid-area: area-2; border-top: 3px solid #10b981; }
+      &.p3 { grid-area: area-3; border-top: 3px solid #f59e0b; }
+      &.p4 { grid-area: area-4; border-top: 3px solid #ec4899; }
+      &.p5 { grid-area: area-5; border-top: 3px solid #8b5cf6; }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .information-section-seccion-10 .paragraphs-section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+      "area-1 area-1"
+      "area-2 area-3"
+      "area-4 area-6"
+      "area-5 area-5";
+  }
+}
+
+@media (max-width: 768px) {
+  .information-section-seccion-10 .paragraphs-section {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+  }
+}

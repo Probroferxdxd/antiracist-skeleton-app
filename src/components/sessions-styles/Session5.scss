@@ -89,3 +89,19 @@
     grid-column: span 6 !important; // En móviles, 1 columna
   }
 }
+
+.pie-chart-container {
+  width: 100%;
+  margin-top: 10px;
+  
+  // Personalización de estilos para Recharts
+  .recharts-legend-item-text {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+
+  .recharts-tooltip-label {
+    display: none; // No necesitamos el label del tooltip para un pie
+  }
+}
