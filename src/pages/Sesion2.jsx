@@ -4,8 +4,8 @@ import "../components/sessions-styles/Session2.scss";
 export default function Sesion2() {
   return (
     <SesionTemplate title={"Seccion 2"}>
-      <div style={{ color: "#fff" }} className="title-section">
-        <h2 style={{color: "#fff"}}>
+      <div className="title-section">
+        <h2>
           OBJECTIVE: Read about the UN's Sustainable Development Goals to share
           your opinion in a blog entry.
         </h2>
@@ -49,6 +49,10 @@ export default function Sesion2() {
       </div>
 
       <hr />
+
+      <div className="image-section">
+        <div className="image-element"></div>
+      </div>
     </SesionTemplate>
   );
 }

@@ -1,0 +1,90 @@
+/* Session4.scss */
+.information-section {
+  display: flex;
+  flex-direction: column;
+  gap: 80px; // Espacio generoso entre cada entrada de autor
+  width: 100%;
+  padding: 40px 5%; // Un poco de padding lateral para que no toque los bordes
+
+  .expository-element {
+    display: flex;
+    width: 100%; // Ocupa todo el ancho disponible
+    align-items: flex-start;
+    gap: 50px;
+    
+    // Intercalamos la dirección usando pseudo-clases
+    &:nth-child(odd) {
+      flex-direction: row;
+      text-align: left;
+    }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      text-align: right;
+    }
+
+    .expository-text {
+      flex: 3; // El texto ocupa el 75% del espacio del contenedor flex
+      color: #fff;
+
+      h3 {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        color: #f0f0f0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        margin-bottom: 1.2rem;
+        opacity: 0.85;
+      }
+    }
+
+    .expository-author {
+      flex: 1; // El autor ocupa el 25% restante
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.05); // Fondo sutil para destacar el nombre
+      border-radius: 15px;
+      min-height: 200px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      h2 {
+        font-size: 1.8rem;
+        color: #fff;
+        font-weight: 700;
+        text-transform: capitalize;
+        // Efecto de firma sutil
+        border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+        padding-bottom: 10px;
+      }
+    }
+  }
+}
+
+// Responsividad para dispositivos móviles
+@media (max-width: 900px) {
+  .information-section {
+    gap: 50px;
+    
+    .expository-element {
+      flex-direction: column !important; // Apilamos los elementos en vertical
+      text-align: center !important;
+      
+      .expository-text {
+        width: 100%;
+      }
+      
+      .expository-author {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+      }
+    }
+  }
+}
