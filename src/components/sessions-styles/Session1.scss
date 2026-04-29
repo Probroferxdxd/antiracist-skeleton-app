@@ -12,6 +12,21 @@
     width: 70%;
   }
 }
+
+@media (max-width: 900px) {
+  .multimedia-section-seccion-1 {
+    flex-direction: column;
+    div {
+      width: 100%;
+      padding: 10px 0;
+    }
+    padding: 10px;
+  }
+  .title-section-seccion-1 h2 {
+    font-size: 1.2rem;
+    width: 100%;
+  }
+}
 .multimedia-section-seccion-1 {
   padding: 40px;
   display: flex;

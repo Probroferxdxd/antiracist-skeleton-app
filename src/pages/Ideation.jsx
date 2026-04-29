@@ -4,7 +4,7 @@ import { useRef } from "react";
 import Sesion6 from "./Sesion6";
 import Sesion7 from "./Sesion7";
 import "../components/Ideation.scss";
-import myVideo from "../assets/backgroundVideo2.mp4";
+import myVideo from "../assets/backgroundVideo3.mp4";
 
 function ProcessStep({ step, index, scrollYProgress, initialBufferProgress, stepAnimationUnitProgress, transitionProgressBuffer }) {
   // Calculate start and end for this specific step using provided global constants

@@ -21,11 +21,6 @@ export default function HomeSection() {
       text: "First Phase",
     },
     {
-      name: "Define",
-      icon: <Goal />,
-      text: "Second Phase",
-    },
-    {
       name: "Ideate",
       icon: <Lightbulb />,
       text: "Third Phase",
@@ -92,14 +87,24 @@ export default function HomeSection() {
         </section>
         <section className="homepage-section-2">
           <div className="text-section">
-            <motion.p>
+            <motion.p
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               Unit 1: expects you to choose a specific problem related to
               identity and diversity, and propose a solution for creating better
               places to live in and improve life conditions.
             </motion.p>
           </div>
           <div className="image-container">
-            <motion.div className="image-element"></motion.div>
+            <motion.div className="image-element"
+              initial={{ opacity: 0, x: 45 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            ></motion.div>
           </div>
         </section>
         <section className="homepage-section-3">
@@ -129,19 +134,30 @@ export default function HomeSection() {
               phases, which are shown below:
             </p>
           </div>
-          <div className="phases-section">
-            {phases.map((phase, index) => (
-              <div key={index} className="phase-element">
-                <div className="phase-bar"></div>
-                <div className="phase-content">
-                  <div className="phase-icon">{phase.icon}</div>
-                  <div className="phase-text">
-                    <h3>{phase.name}</h3>
-                    <p>{phase.text}</p>
+      <div className="phases-section" style={{ overflow: "hidden" }}>
+        <motion.div 
+          className="phases-carousel-track"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 25,
+            ease: "linear",
+            repeat: Infinity
+          }}
+          style={{ display: "flex", width: "fit-content" }}
+        >
+          {[...phases, ...phases].map((phase, index) => (
+            <div key={index} className="phase-element" style={{ flexShrink: 0, width: "300px" }}>
+              <div className="phase-bar"></div>
+              <div className="phase-content">
+                <div className="phase-icon">{phase.icon}</div>
+                <div className="phase-text">
+                  <h3>{phase.name}</h3>
+                  <p>{phase.text}</p>
+                </div>
                   </div>
                 </div>
-              </div>
-            ))}
+          ))}
+        </motion.div>
           </div>
         </section>
         <section className="homepage-section-5">

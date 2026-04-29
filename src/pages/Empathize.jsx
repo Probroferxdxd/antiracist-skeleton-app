@@ -273,9 +273,9 @@ export default function Empathize() {
           </div>
         </div>
       </div>
-      <div className="empathize-hero-content" ref={heroRef}>
+      <motion.div className="empathize-hero-content" >
 
-        <motion.h2 style={{color: "#000"}} className="title-hero-content">Do you want to check our progress?</motion.h2>
+        <motion.h2 className="title-hero-content" >Do you want to check our progress?</motion.h2>
         <div className="images-content">
 
           <Link to="/antiracist-skeleton-app/sesion1" element={<Sesion1 />}>
@@ -313,7 +313,7 @@ export default function Empathize() {
           </Link>
         </div>
 
-      </div>
+      </motion.div>
     </div>
   );
 }

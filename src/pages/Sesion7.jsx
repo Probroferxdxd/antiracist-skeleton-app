@@ -7,7 +7,7 @@ export default function Sesion7() {
       title: "The 8 ideas (Crazy 8s)",
       description:
         "Some ideas are creating educational workshops, organizing clean-up days, and making social media campaigns. We can also design an app to report problems, install recycling points, and create school volunteer groups. Other ideas include educational games for children and working with institutions for support.",
-      imageSrc: ""
+      imageSrc: "https://scontent.flim28-1.fna.fbcdn.net/v/t1.15752-9/678347954_869042496196507_590765118714210735_n.png?_nc_cat=106&ccb=1-7&_nc_sid=fc17b8&efg=eyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOmNvbnRyb2wiXX0%3D&_nc_ohc=7vKP2k3x4GsQ7kNvwHR6wRm&_nc_oc=AdrcwZJSeDh1h-70CHctBLyjEOechAR7Yj3wIM7MlTXdBJ7Dk6KBCnSanxQL7p_2BO0&_nc_zt=23&_nc_ht=scontent.flim28-1.fna&_nc_ss=7b6a8&oh=03_Q7cD5AGFpvJhO7QRb6pHuT0ojs2IAj5VZ9fwwjRRzSuqVnT1dA&oe=6A18B973"
     },
     {
       title: "The 2 best ideas (selected)",
@@ -19,7 +19,7 @@ export default function Sesion7() {
       title: "Final idea (proposal)",
       description:
         "The final idea is a community program that combines education and action. People first learn about the problem and then help solve it. This creates both short-term and long-term impact.",
-      imageSrc: ""
+      imageSrc: "https://scontent.flim38-1.fna.fbcdn.net/v/t1.15752-9/675275383_1259304759652041_2964368226456147989_n.png?_nc_cat=103&ccb=1-7&_nc_sid=fc17b8&efg=eyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOmNvbnRyb2wiXX0%3D&_nc_ohc=uSw0UnRRMxEQ7kNvwHVd9eL&_nc_oc=AdqGvyzr6AgM49XoOqHRgjER-V1irg-zhlQieuZQARwkMheWVSSLv-b9bmTSZuwIqrc&_nc_zt=23&_nc_ht=scontent.flim38-1.fna&_nc_ss=7b6a8&oh=03_Q7cD5AFIweuO70ru_MMBW5msYv2raTI7OKCFRkTwaeDsi7DdoA&oe=6A18BC7F"
     },
 
   ];

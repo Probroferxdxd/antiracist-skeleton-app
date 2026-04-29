@@ -18,20 +18,21 @@
     position: absolute; // Esto permite que se superpongan exactamente en el mismo lugar
     width: 600px;
     height: 400px;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat; ;
     border-radius: 20px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7);
     border: 10px solid #fff; // Estilo tipo fotografía/polaroid
   }
 
   .image-1 {
-    background-image: url("https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg");
+    background-image: url("https://scontent.xx.fbcdn.net/v/t1.15752-9/675333309_2210863539655375_2785959223904715582_n.png?_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=vGS6MnlET1IQ7kNvwHN7A8X&_nc_oc=Adp0oHyiwjzer-w3EcO6-rXA-xMHgpZqiAOnO5q8XRx5uvzbeNcxiaVUdUM81w03430xcY13z2QGKeJNFOwNS4c6&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD5AH1CLSyCXHTYqish89McBycLLfuUSBh8QTzt5DEPttKxQ&oe=6A18BC54");
     z-index: 2;
   }
 
   .image-2 {
-    background-image: url("https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg");
+    background-image: url(https://scontent.flim28-1.fna.fbcdn.net/v/t1.15752-9/678164995_1731914477968159_3177227627710662453_n.png?_nc_cat=107&ccb=1-7&_nc_sid=fc17b8&efg=eyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOmNvbnRyb2wiXX0%3D&_nc_ohc=c_qZ5ANieVUQ7kNvwFhUBkI&_nc_oc=AdoTU0xO2NiAEb26QVIyl6FJ7et1lMW3Decam4HA3FYBN-d2ta13cDOZaYZ9y7UE4tQ&_nc_zt=23&_nc_ht=scontent.flim28-1.fna&_nc_ss=7b6a8&oh=03_Q7cD5AHJ_fhv10QqSJjCwtmafNl0ouTDqgQvIO8ceyxhr2w6RA&oe=6A18C4D7);
     z-index: 1;
   }
 }

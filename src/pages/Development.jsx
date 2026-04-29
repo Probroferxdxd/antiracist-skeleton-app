@@ -7,7 +7,7 @@ import Sesion10 from "./Sesion10";
 import Sesion11 from "./Sesion11";
 import Sesion12 from "./Sesion12";
 import "../components/Development.scss";
-import myVideo from "../assets/backgroundVideo2.mp4";
+import myVideo from "../assets/backgroundVideo4.mp4";
 
 function ProcessStep({ step, index, scrollYProgress, initialBufferProgress, stepAnimationUnitProgress, transitionProgressBuffer }) {
   // Calculate start and end for this specific step using provided global constants

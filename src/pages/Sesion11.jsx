@@ -19,15 +19,20 @@ function QuestionStep({ question, index, scrollYProgress, initialBufferProgress,
   );
 
   return (
-    <motion.h2
-      className="step-question"
-      style={{
-        opacity,
-        y,
-      }}
-    >
-      {question}
-    </motion.h2>
+    <div className="animate-section">
+      <motion.h2
+        className="step-question"
+        style={{
+          opacity,
+          y,
+        }}
+      >
+        {question}
+      </motion.h2>
+      <motion.p>
+
+      </motion.p>
+    </div>
   );
 }
 

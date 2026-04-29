@@ -42,7 +42,10 @@
         .img-element {
             width: 100%;
             height: 350px;
-            background-color: #e0e0e0; // Placeholder para la imagen
+            background: url("https://scontent.xx.fbcdn.net/v/t1.15752-9/679799250_4226197737640722_7239245433031833337_n.png?_nc_cat=104&ccb=1-7&_nc_sid=fc17b8&efg=eyJxZV9ncm91cHMiOlsiaWdkX2Jlc3RfZWZmb3J0X2ltYWdlOmNvbnRyb2wiXX0%3D&_nc_ohc=uVtrDfVN4NUQ7kNvwFbW9Tq&_nc_oc=AdoKRjsDVLXmzJDWht_oWlqJG9p3ql07MKoIuoltlKuqSf-V4FCm7Ft-rcz4xFC92vN_dc8VCBx4TbwmEu_yNrCS&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD5AE35iv33b48COnAUgofewpiqgqHU2p1O0TD4oLJC-CxuA&oe=6A18A603"); // Placeholder para la imagen
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             border-radius: 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
@@ -74,5 +77,20 @@
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
             }
         }
+    }
+}
+
+@media (max-width: 900px) {
+    .information-section-seccion-3 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+        .image-section, .text-section {
+            height: auto;
+            min-height: 200px;
+        }
+    }
+    .title-section h2 {
+        font-size: 1.2rem;
     }
 }

@@ -165,3 +165,25 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .development-title-content {
+    .development-title {
+      font-size: 2.2rem;
+    }
+    height: auto;
+    padding: 40px 10px;
+  }
+  .development-content {
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .development-title-content {
+    .development-title {
+      font-size: 1.2rem;
+    }
+    padding: 20px 5px;
+  }
+}

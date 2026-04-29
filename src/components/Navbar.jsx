@@ -8,6 +8,7 @@ import {
   Settings,
   Box,
   ChevronDown,
+  Menu,
 } from "lucide-react";
 import "./Navbar.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -19,6 +20,7 @@ import Prototype from "../pages/Prototype";
 
 export default function Navbar() {
   const [openSubmenus, setOpenSubmenus] = useState({});
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const { scrollY } = useScroll();
   const backgroundColor = useTransform(
@@ -135,11 +137,19 @@ export default function Navbar() {
         <div className="navbar-logo">
           <Link to="/antiracist-skeleton-app/">MyApp</Link>
         </div>
-        <ul className="navbar-menu">
+        {/* Hamburger icon visible only on mobile */}
+        <button
+          className="navbar-hamburger"
+          aria-label="Abrir menú"
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          <Menu size={32} />
+        </button>
+        <ul className={`navbar-menu${menuOpen ? " open" : ""}`}>
           {navbarElements.map((item, index) => (
             <li key={index} className="navbar-item">
               <div className="items-information">
-                <Link to={item.link || "#"} className="navbar-link">
+                <Link to={item.link || "#"} className="navbar-link" onClick={() => { setMenuOpen(false); window.scrollTo(0, 0); }}>
                   <div className="information-content">
                     <span className="items-text">{item.name}</span>
                   </div>
@@ -162,7 +172,7 @@ export default function Navbar() {
                 >
                   {item.subitems.map((subitem, subindex) => (
                     <li key={subindex} className="navbar-subitem">
-                      <Link to={subitem.link} className="navbar-link">
+                      <Link to={subitem.link} className="navbar-link" onClick={() => { setMenuOpen(false); window.scrollTo(0, 0); }}>
                         <span
                           className="items-span-text"
                           style={{ transitionDelay: `${subindex * 0.2}s` }}

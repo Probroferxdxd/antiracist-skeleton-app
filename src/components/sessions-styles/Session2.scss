@@ -28,9 +28,8 @@
      max-width: 1200px;
      margin: 0 auto;
      padding: 40px 20px;
-     display: grid;
-     background-color: red;
-     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     display: flex;
+     flex-direction: column;
      gap: 30px;
 
      .p-element {
@@ -39,6 +38,10 @@
           border-radius: 12px;
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
           transition: transform 0.2s ease;
+          width: 50%;
+          &:nth-child(even) {
+               align-self: flex-end;  
+          }
 
           &:hover {
                transform: translateY(-5px);
@@ -67,5 +70,16 @@ hr{
           width: 80%;
           height: 100%;
           position: relative;;
+     }
+}
+
+@media (max-width: 900px) {
+     .information-section-seccion-2 {
+          flex-direction: column;
+          gap: 10px;
+          padding: 10px;
+     }
+     .title-section-seccion-2 h2 {
+          font-size: 1.2rem;
      }
 }

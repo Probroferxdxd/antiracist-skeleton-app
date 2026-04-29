@@ -247,7 +247,7 @@
           .image-1 {
             width: 95%;
             height: 600px;
-            background: url("https://st4.depositphotos.com/15257832/38047/i/450/depositphotos_380472454-stock-photo-hoboken-usa-june-5th-2020.jpg");
+            background: url("https://images.pexels.com/photos/9486935/pexels-photo-9486935.jpeg?_gl=1*ksqmh7*_ga*NzI3MTU2MDQ5LjE3NzY1NTk4MDA.*_ga_8JE65Q40S6*czE3Nzc0MjQzNTckbzYkZzEkdDE3Nzc0MjQ5NjYkajYwJGwwJGgw");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -351,6 +351,160 @@
                width: 700px;
                height: 700px;
           }
+      }
+    }
+  }
+}
+
+// ===================
+// MEDIA QUERIES RESPONSIVE
+// ===================
+@media (max-width: 900px) {
+  .container {
+    .page-container {
+      .template-presentation h1 {
+        font-size: 2rem;
+      }
+      .seccion-template {
+        height: auto;
+      }
+      .seccion-content {
+        gap: 20px;
+      }
+      .home-container {
+        flex-direction: column;
+        align-items: flex-start;
+        .homepage-section-1 .text-section h1, .homepage-section-1 .text-section h2 {
+          font-size: 2rem;
+          width: 100%;
+        }
+        .homepage-section-2 {
+          flex-direction: column;
+          div {
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+          }
+          .image-container {
+            margin-top: 20px;
+          }
+        }
+        .homepage-section-3 {
+          flex-direction: column;
+          padding: 40px 10px;
+          .text-section, .pictures-section {
+            width: 100%;
+            min-width: 0;
+            padding: 0;
+          }
+          .pictures-section {
+            flex-direction: column;
+            align-items: center;
+            .image-1, .image-2 {
+              position: static;
+              width: 100%;
+              height: 200px;
+              margin: 10px 0;
+              background-position: center;
+              background-size: cover;
+              background-repeat: no-repeat;
+            }
+
+          }
+        }
+        .homepage-section-2 div {
+          padding: 30px 10px;
+        }
+        .homepage-section-3 {
+          flex-direction: column;
+          padding: 40px 10px;
+          .text-section {
+            width: 100%;
+            h2 {
+              font-size: 2.5rem;
+            }
+            p {
+              width: 100%;
+            }
+          }
+          .pictures-section {
+            width: 100%;
+            .image-1, .image-2 {
+              position: static;
+              width: 100%;
+              height: 200px;
+              margin: 10px 0;
+            }
+
+          }
+        }
+        .homepage-section-4 {
+          padding: 20px;
+          .text-section p {
+            font-size: 18px;
+            width: 100%;
+          }
+          .phases-section {
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+            .phase-element {
+              flex-direction: row;
+              gap: 10px;
+              .phase-bar {
+                height: 60px;
+              }
+            }
+          }
+        }
+        .homepage-section-5 {
+          flex-direction: column;
+          padding: 20px;
+          .image-element {
+            width: 100%;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    .page-container {
+      .template-presentation h1 {
+        font-size: 1.2rem;
+      }
+      .home-container {
+        .homepage-section-1 .text-section h1, .homepage-section-1 .text-section h2 {
+          font-size: 1.2rem;
+        }
+        .homepage-section-1 {
+          padding: 10px;
+        }
+        .homepage-section-2 div {
+          padding: 10px 2px;
+          font-size: 1rem;
+        }
+        .homepage-section-3 {
+          padding: 10px;
+          .text-section h2 {
+            font-size: 1.5rem;
+          }
+        }
+        .homepage-section-4 {
+          padding: 10px;
+          .text-section p {
+            font-size: 14px;
+          }
+        }
+        .homepage-section-5 {
+          padding: 10px;
+          .image-element {
+            height: 120px;
+          }
+        }
       }
     }
   }
