@@ -29,8 +29,12 @@ function QuestionStep({ question, index, scrollYProgress, initialBufferProgress,
       >
         {question}
       </motion.h2>
-      <motion.p>
-
+      <motion.p style={{
+        opacity,
+        y,
+        color: "#fff",
+      }}>
+        ddddddddd
       </motion.p>
     </div>
   );
@@ -42,6 +46,10 @@ export default function Sesion11() {
     "What was your favourite moment?",
     "Which part was the most shocking?",
     "Who was the most interesting character?"
+  ]
+
+  const paragraph = [
+    "When "
   ]
 
   const STEP_ANIMATION_UNIT_VH = 40;
@@ -83,6 +91,7 @@ export default function Sesion11() {
               <QuestionStep
                 key={index}
                 question={question}
+                paragraph={"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
                 index={index}
                 scrollYProgress={scrollYProgress}
                 initialBufferProgress={initialBufferProgress}

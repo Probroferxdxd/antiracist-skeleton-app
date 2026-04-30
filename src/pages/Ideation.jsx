@@ -6,42 +6,42 @@ import Sesion7 from "./Sesion7";
 import "../components/Ideation.scss";
 import myVideo from "../assets/backgroundVideo3.mp4";
 
-function ProcessStep({ step, index, scrollYProgress, initialBufferProgress, stepAnimationUnitProgress, transitionProgressBuffer }) {
-  // Calculate start and end for this specific step using provided global constants
-  // These ranges are relative to the overall scrollYProgress (0 to 1) of the container
-  const start = initialBufferProgress + index * stepAnimationUnitProgress;
-  const end = initialBufferProgress + (index + 1) * stepAnimationUnitProgress;
 
-  // Animación de opacidad y desplazamiento (y) basada en el progreso del scroll
-  const opacity = useTransform(
-    scrollYProgress,
-    [start, start + transitionProgressBuffer, end - transitionProgressBuffer, end],
-    [0, 1, 1, 0],
-  );
-  const y = useTransform(
-    scrollYProgress,
-    [start, start + transitionProgressBuffer, end - transitionProgressBuffer, end],
-    [40, 0, 0, -40],
-  );
-
+// Componente para cada elemento con animación desde izquierda o derecha
+function AnimatedItem({ children, fromRight, delay, style }) {
   return (
-    <motion.h2
-      style={{
-        opacity,
-        y,
-        position: "absolute", // Posicionamiento absoluto para superponerse
-        top: "50%",
-        left: "50%",
-        x: "-50%", // Centrado horizontal mediante framer-motion
-        fontSize: "3.5rem",
-        color: "#fff",
-        textAlign: "center",
-        width: "100%",
-        margin: 0,
+    <motion.div
+      initial={{ opacity: 0, x: fromRight ? 100 : -100 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ 
+        duration: 0.8, 
+        ease: "easeInOut",
+        delay: delay 
       }}
+      style={{ ...style, position: "relative", zIndex: 2 }}
     >
-      {step}
-    </motion.h2>
+      {children}
+    </motion.div>
+  );
+}
+
+// Componente para las imágenes con animación alternada
+function AnimatedImage({ children, fromRight, delay, rotate, filter }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: fromRight ? 150 : -150, scale: 0.8 }}
+      whileInView={{ opacity: 1, x: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ 
+        duration: 0.9, 
+        ease: "easeInOut",
+        delay: delay 
+      }}
+      style={{ rotate, filter }}
+    >
+      {children}
+    </motion.div>
   );
 }
 
@@ -54,40 +54,11 @@ export default function Ideation() {
     "Objectives",
   ];
 
-  // Define constants for animation and container sizing
-  const STEP_ANIMATION_UNIT_VH = 30; // The conceptual height for each step's animation
-  const INITIAL_BUFFER_VH = 0; // Initial scroll buffer before any step animation starts (e.g., 200 for 200vh wait)
-  const END_SCROLL_BUFFER_VH = 30; // Extra scrollable height at the end of the section
-
-  // Calculate the total height that the animations will span (0 to 1 progress)
-  const totalAnimationSpanVh = listProcess.length * STEP_ANIMATION_UNIT_VH + INITIAL_BUFFER_VH;
-
-  // Calculate the actual height of the scroll container
-  const totalContainerHeightVh = totalAnimationSpanVh + END_SCROLL_BUFFER_VH;
-
-  // Calculate progress values for the entire scroll section (0 to 1)
-  // These progress values are relative to the totalContainerHeightVh
-  const initialBufferProgress = INITIAL_BUFFER_VH / totalContainerHeightVh;
-  const stepAnimationUnitProgress = STEP_ANIMATION_UNIT_VH / totalContainerHeightVh;
-  const transitionProgressBuffer = stepAnimationUnitProgress * 0.3; // Buffer for fade-in/out within each step
-
-  // Helper to get scroll ranges for a given step index
-  const getScrollRangesForStep = (index) => {
-    const start = initialBufferProgress + index * stepAnimationUnitProgress;
-    const end = initialBufferProgress + (index + 1) * stepAnimationUnitProgress;
-    return { start, end };
-  };
-
-  // Original listProcess (kept for reference, but the one above is used for calculations)
-  const originalListProcess = [
-    "User research",
-    "Interviews",
-    "Surveys",
-    "Observations",
-    "Key insights",
-  ];
-
   const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start center", "end center"] });
+
+  // Transformaciones para las imágenes de fondo (movimiento ligero de scroll)
+  const featureImgRotate = useTransform(scrollYProgress, [0, 1], [0, 30]);
+  const featureImgBlur = useTransform(scrollYProgress, [0, 1], ["blur(0px)", "blur(12px)"]);
 
   // Scroll animation for hero images - stacked papers effect with sticky
   const { scrollYProgress: heroScrollYProgress } = useScroll({
@@ -107,43 +78,12 @@ export default function Ideation() {
   const img2Rotate = useTransform(heroScrollYProgress, [0, 0.5, 1], [-8, 5, 25]);
   const img2Scale = useTransform(heroScrollYProgress, [0, 0.5, 1], [0.95, 0.9, 0.7]);
 
-
-  // Opacidad para el título fijo: aparece al entrar y desaparece al salir de la sección total
-  const infoOpacity = useTransform(
-    scrollYProgress,
-    [0, 0.1, 0.9, 1],
-    [0, 1, 1, 0],
-  );
-
-  // Animation for image-1 (e.g., covering steps 0 and 1)
-  const image1StartRange = getScrollRangesForStep(0).start;
-  const image1EndRange = getScrollRangesForStep(1).end;
-
-  const image1Opacity = useTransform(
-    scrollYProgress,
-    [image1StartRange, image1StartRange + transitionProgressBuffer, image1EndRange - transitionProgressBuffer, image1EndRange],
-    [0, 1, 1, 0],
-  );
-  const image1Y = useTransform(
-    scrollYProgress,
-    [image1StartRange, image1StartRange + transitionProgressBuffer, image1EndRange - transitionProgressBuffer, image1EndRange],
-    [40, 0, 0, -40],
-  );
-
-  // Animation for image-2 (e.g., covering steps 2, 3, and 4)
-  const image2StartRange = getScrollRangesForStep(2).start;
-  const image2EndRange = getScrollRangesForStep(4).end;
-
-  const image2Opacity = useTransform(
-    scrollYProgress,
-    [image2StartRange, image2StartRange + transitionProgressBuffer, image2EndRange - transitionProgressBuffer, image2EndRange],
-    [0, 1, 1, 0],
-  );
-  const image2Y = useTransform(
-    scrollYProgress,
-    [image2StartRange, image2StartRange + transitionProgressBuffer, image2EndRange - transitionProgressBuffer, image2EndRange],
-    [40, 0, 0, -40],
-  );
+  // Animation for process steps - appear without disappearing
+  const processSteps = listProcess.map((step, index) => ({
+    content: step,
+    fromRight: index % 2 === 1, // Alternar: impares desde derecha, pares desde izquierda
+    delay: index * 0.15
+  }));
 
   return (
     <div className="ideation-content">
@@ -163,91 +103,133 @@ export default function Ideation() {
         </motion.h1>
       </div>
 
-      <div className="ideation-features-content"> {/* This div remains as a container for the whole section */}
+      <div className="ideation-features-content">
         <div
           ref={containerRef}
           className="process-steps-container"
           style={{
-            height: `${totalContainerHeightVh}vh`, // Use the calculated totalContainerHeightVh for consistency
+            minHeight: "100vh",
             position: "relative",
             marginTop: "20px",
+            padding: "40px 0",
           }}
         >
           <div
             className="sticky-stage"
             style={{
-              position: "sticky", // Este contenedor es el que se queda fijo en pantalla
-              top: "40vh",
-              height: "30vh",
+              position: "sticky",
+              top: "20vh",
+              minHeight: "60vh",
               overflow: "hidden", 
               display: "flex",
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
+              gap: "30px",
             }}
           >
+            {/* Título fijo */}
             <motion.h2
               className="ideation-info-h2"
+              initial={{ opacity: 0, y: -40 }}
+              whileInView={{ opacity: 1, y: 10 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               style={{
-                opacity: infoOpacity,
-                position: "absolute", // Position absolutely within the sticky container
-                top: "50%",
-                left: "50%",
-                x: "-50%",
-                y: "-150%", // Centrado perfecto
+                position: "absolute",
+                top: "10vh",
                 width: "100%",
                 textAlign: "center",
                 color: "#fff", 
                 fontSize: "1.5rem",
+                zIndex: 2
               }}
             >
               The stage of gathering crucial insights
             </motion.h2>
 
-            {/* Animated Image 1 */}
-            <motion.div
-              className="image-1"
-              style={{
-                opacity: image1Opacity,
-                y: image1Y,
-                position: "absolute",
-                width: "300px",
-                height: "300px",
-                top: "50%",
-                left: "50%",
-                // Usamos margin para desplazar la imagen del centro sin romper el sticky
-                marginLeft: "-700px", 
-                marginTop: "-150px",
-              }}
-            ></motion.div>
-
-            {/* Animated Image 2 */}
-            <motion.div
-              className="image-2"
-              style={{
-                opacity: image2Opacity,
-                y: image2Y,
-                position: "absolute",
-                width: "300px",
-                height: "300px",
-                top: "50%",
-                left: "50%",
-                marginLeft: "400px", 
-                marginTop: "-150px",
-                // Ensure background image or content is defined in CSS for .image-2
-              }}
-            ></motion.div>
-
-            {listProcess.map((step, index) => (
-              <ProcessStep
-                key={index}
-                step={step}
-                index={index}
-                scrollYProgress={scrollYProgress}
-                initialBufferProgress={initialBufferProgress}
-                stepAnimationUnitProgress={stepAnimationUnitProgress}
-                transitionProgressBuffer={transitionProgressBuffer}
-              />
+            {/* Process Steps con animación alternada */}
+            {processSteps.map((step, index) => (
+              <AnimatedItem 
+                key={index} 
+                fromRight={step.fromRight} 
+                delay={step.delay}
+              >
+                <motion.h2
+                  style={{
+                    fontSize: "2.5rem",
+                    color: "#fff",
+                    textAlign: "center",
+                    padding: "20px 40px",
+                    background: "rgba(0,0,0,0.3)",
+                    borderRadius: "10px",
+                    margin: "10px 0",
+                  }}
+                >
+                  {step.content}
+                </motion.h2>
+              </AnimatedItem>
             ))}
+
+            {/* Imágenes de fondo centradas respecto a los textos */}
+            <div className="background-images-wrapper" style={{ 
+              display: "flex", 
+              justifyContent: "center", 
+              gap: "250px", // Espacio amplio para no tapar el centro del texto
+              width: "100%",
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 0,
+              pointerEvents: "none" // Para que no bloquee clics en el texto
+            }}>
+              <AnimatedImage 
+                fromRight={false} 
+                delay={0.2}
+                rotate={featureImgRotate}
+                filter={featureImgBlur}
+              >
+                <motion.div
+                  className="image-1"
+                  style={{
+                    width: "300px",
+                    height: "300px",
+                    borderRadius: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative", // Anulamos el absolute del SCSS para usar el flex
+                    top: "auto",
+                    left: "auto"
+                  }}
+                >
+                </motion.div>
+              </AnimatedImage>
+
+              <AnimatedImage 
+                fromRight={true} 
+                delay={0.4}
+                rotate={featureImgRotate}
+                filter={featureImgBlur}
+              >
+                <motion.div
+                  className="image-2"
+                  style={{
+                    width: "300px",
+                    height: "300px",
+                    borderRadius: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    position: "relative",
+                    top: "auto",
+                    right: "auto"
+                  }}
+                >
+                </motion.div>
+              </AnimatedImage>
+            </div>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ import Sesion9 from './pages/Sesion9'
 import Sesion10 from './pages/Sesion10'
 import Sesion11 from './pages/Sesion11'
 import Sesion12 from './pages/Sesion12'
-
+import FirstVersion from './pages/FirstVersion'
 
 import './App.scss'
 
@@ -57,6 +57,7 @@ function App() {
           <Route path="/antiracist-skeleton-app/sesion10" element={<Sesion10 />} />
           <Route path="/antiracist-skeleton-app/sesion11" element={<Sesion11 />} />
           <Route path="/antiracist-skeleton-app/sesion12" element={<Sesion12 />} />
+          <Route path="/antiracist-skeleton-app/firstversion" element={<FirstVersion />} />
         </Routes>
       </div>
     </Router>

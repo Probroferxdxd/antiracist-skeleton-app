@@ -29,6 +29,7 @@ function ProcessStep({ step, index, scrollYProgress, initialBufferProgress, step
 
   return (
     <motion.h2
+    className="main-title-section"
       style={{
         opacity,
         y,
@@ -36,10 +37,10 @@ function ProcessStep({ step, index, scrollYProgress, initialBufferProgress, step
         top: "50%",
         left: "50%",
         x: "-50%", // Centrado horizontal mediante framer-motion
-        fontSize: "3.5rem",
+        fontSize: "2rem",
         color: "#fff",
         textAlign: "center",
-        width: "100%",
+        width: "70%",
         margin: 0,
       }}
     >
@@ -142,7 +143,7 @@ export default function Development() {
   const image1Opacity = useTransform(
     scrollYProgress,
     [image1StartRange, image1StartRange + transitionProgressBuffer, image1EndRange - transitionProgressBuffer, image1EndRange],
-    [0, 1, 1, 0],
+    [0, 0.3, 0.3, 0],
   );
   const image1Y = useTransform(
     scrollYProgress,
@@ -157,7 +158,7 @@ export default function Development() {
   const image2Opacity = useTransform(
     scrollYProgress,
     [image2StartRange, image2StartRange + transitionProgressBuffer, image2EndRange - transitionProgressBuffer, image2EndRange],
-    [0, 1, 1, 0],
+    [0, 0.3, 0.3, 0],
   );
   const image2Y = useTransform(
     scrollYProgress,

@@ -54,7 +54,7 @@ export default function Navbar() {
       icon: <Search />,
       link: "/antiracist-skeleton-app/empathize",
       element: <Empathize />,
-    
+
       subitems: [
         {
           name: "Sesión 1",
@@ -68,6 +68,14 @@ export default function Navbar() {
           name: "Sesión 3",
           link: "/antiracist-skeleton-app/sesion3",
         },
+      ],
+    },
+    {
+      name: "Define",
+      icon: <Goal />,
+      link: "/antiracist-skeleton-app/define",
+      element: <Define />,
+      subitems: [
         {
           name: "Sesión 4",
           link: "/antiracist-skeleton-app/sesion4",
@@ -127,7 +135,12 @@ export default function Navbar() {
       icon: <Box />,
       link: "/antiracist-skeleton-app/prototype",
       element: <Prototype />,
-      subitems: [],
+      subitems: [
+        {
+          name: "First Version",
+          link: "/antiracist-skeleton-app/firstversion",
+        },
+      ],
     },
   ];
 
@@ -149,7 +162,14 @@ export default function Navbar() {
           {navbarElements.map((item, index) => (
             <li key={index} className="navbar-item">
               <div className="items-information">
-                <Link to={item.link || "#"} className="navbar-link" onClick={() => { setMenuOpen(false); window.scrollTo(0, 0); }}>
+                <Link
+                  to={item.link || "#"}
+                  className="navbar-link"
+                  onClick={() => {
+                    setMenuOpen(false);
+                    window.scrollTo(0, 0);
+                  }}
+                >
                   <div className="information-content">
                     <span className="items-text">{item.name}</span>
                   </div>
@@ -172,7 +192,14 @@ export default function Navbar() {
                 >
                   {item.subitems.map((subitem, subindex) => (
                     <li key={subindex} className="navbar-subitem">
-                      <Link to={subitem.link} className="navbar-link" onClick={() => { setMenuOpen(false); window.scrollTo(0, 0); }}>
+                      <Link
+                        to={subitem.link}
+                        className="navbar-link"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          window.scrollTo(0, 0);
+                        }}
+                      >
                         <span
                           className="items-span-text"
                           style={{ transitionDelay: `${subindex * 0.2}s` }}

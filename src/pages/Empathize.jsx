@@ -4,8 +4,6 @@ import { useRef } from "react";
 import Sesion1 from "./Sesion1";
 import Sesion2 from "./Sesion2";
 import Sesion3 from "./Sesion3";
-import Sesion4 from "./Sesion4";
-import Sesion5 from "./Sesion5";
 import "../components/Empathize.scss";
 import myVideo from "../assets/backgroundVideo2.mp4";
 
@@ -285,31 +283,17 @@ export default function Empathize() {
             ><span>Sesion 1</span></motion.div>
           </Link>
 
-          <Link to="/antiracist-skeleton-app/sesion2" element={<Sesion1 />}>
+          <Link to="/antiracist-skeleton-app/sesion2" element={<Sesion2 />}>
             <motion.div 
               className="image-2 imagen-elements"
               style={{ x: img2X, y: img2Y, rotate: img2Rotate, scale: img2Scale }}
             ><span>Sesion 2</span></motion.div>
           </Link>
-          <Link to="/antiracist-skeleton-app/sesion3" element={<Sesion1 />}>
+          <Link to="/antiracist-skeleton-app/sesion3" element={<Sesion3 />}>
             <motion.div 
               className="image-3 imagen-elements"
               style={{ x: img3X, y: img3Y, rotate: img3Rotate, scale: img3Scale }}
             ><span>Sesion 3</span></motion.div>
-          </Link>
-          <Link to="/antiracist-skeleton-app/sesion4" element={<Sesion1 />}>
-            <motion.div 
-              className="image-4 imagen-elements"
-              style={{ x: img4X, y: img4Y, rotate: img4Rotate, scale: img4Scale }}
-            ><span>Sesion 4</span></motion.div>
-          </Link>
-          <Link to="/antiracist-skeleton-app/sesion5" element={<Sesion1 />}>
-            <motion.div 
-              className="image-5 imagen-elements"
-              style={{ x: img5X, y: img5Y, rotate: img5Rotate, scale: img5Scale }}
-            >
-              <span>Sesion 5</span>
-              </motion.div>
           </Link>
         </div>
 

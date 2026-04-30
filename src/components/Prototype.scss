@@ -1,4 +1,4 @@
-.empathize-content {
+.prototype-content {
   width: 100%;
   height: 100vh;
   position: relative;
@@ -26,26 +26,26 @@
     }
   }
 
-  .empathize-title-content {
+  .prototype-title-content {
     display: flex;
     align-items: center;
     gap: 20px;
     height: 100vh;
     justify-content: center;
     position: relative;
-    .empathize-title {
+    .prototype-title {
       font-size: 5rem;
       color: white;
     }
   }
 
-  .emphatize-features-content {
+  .prototype-features-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
     background-color: #000;
     width: 100%;
-    .empathize-info-h2 {
+    .prototype-info-h2 {
       font-size: 1.1rem;
       font-weight: 300;
       color: rgba(255, 255, 255, 0.8);
@@ -56,15 +56,15 @@
       width: 100%;
     }
     .image-1 {
-      background: url("https://media.istockphoto.com/id/2165520355/photo/diverse-business-team-collaborating-together-in-unity-and-trust.jpg?s=1024x1024&w=is&k=20&c=wtb-bpqXCvG54rSznsY-nxxihZhO9wxaxzFs83UtxDE=");
-      background-position: left top;
+      background: url("https://images.pexels.com/photos/29708270/pexels-photo-29708270.jpeg");
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
       border-radius: 10px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-
     }
     .image-2 {
-      background: url("https://images.pexels.com/photos/6146704/pexels-photo-6146704.jpeg?_gl=1*ftnkcs*_ga*NzI3MTU2MDQ5LjE3NzY1NTk4MDA.*_ga_8JE65Q40S6*czE3Nzc0MjczMTMkbzckZzAkdDE3Nzc0MjczMTMkajYwJGwwJGgw");
+      background: url("https://images.pexels.com/photos/31748015/pexels-photo-31748015.jpeg");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -73,7 +73,7 @@
     }
   }
 
-  .empathize-hero-content {
+  .prototype-hero-content {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -96,7 +96,7 @@
       position: sticky;
       top: 0;
       display: grid;
-      place-items: center; // Centra todo el contenido de la rejilla
+      place-items: center;
       overflow: visible;
 
     
@@ -107,10 +107,10 @@
         color: #fff;
         .imagen-elements {
           position: relative;
-          grid-area: 1/1; // Hace que todas las imágenes ocupen la misma celda (se apilan)
+          grid-area: 1/1;
           width: 300px;
           height: 300px;
-          background: transparent !important; // Eliminamos el fondo del div principal
+          background: transparent !important;
           border-radius: 10px;
           box-shadow:
             2px 2px 10px rgba(0, 0, 0, 0.3),
@@ -121,7 +121,7 @@
           justify-content: center;
           align-items: center;
           font-size: 30px;
-          overflow: hidden; // Evita que el desenfoque se salga de los bordes redondeados
+          overflow: hidden;
           
           &::before {
             content: "";
@@ -141,46 +141,46 @@
           span{
             display: inline-block;
             position: relative;
-            z-index: 2; // Asegura que el texto esté por encima de la imagen desenfocada
+            z-index: 2;
           }
 
           &:hover {
             box-shadow:
               8px 8px 25px rgba(0, 0, 0, 0.5),
               12px 12px 40px rgba(0, 0, 0, 0.3);
-            z-index: 100; // Asegura que la imagen en hover esté por encima
+            z-index: 100;
             &::before {
-              filter: blur(5px); // Aplica el desenfoque solo al pseudo-elemento del fondo
+              filter: blur(5px);
             }
           }
         }
       }
 
-      .image-1 { z-index: 5; &::before { background-image: url("https://images.pexels.com/photos/29708270/pexels-photo-29708270.jpeg?_gl=1*1yirf28*_ga*NzI3MTU2MDQ5LjE3NzY1NTk4MDA.*_ga_8JE65Q40S6*czE3Nzc0MjczMTMkbzckZzEkdDE3Nzc0MjgwOTMkajI3JGwwJGgw"); } }
-      .image-2 { z-index: 4; &::before { background-image: url("https://images.pexels.com/photos/31748015/pexels-photo-31748015.jpeg?_gl=1*tyzy7k*_ga*NzI3MTU2MDQ5LjE3NzY1NTk4MDA.*_ga_8JE65Q40S6*czE3Nzc0MjczMTMkbzckZzEkdDE3Nzc0MjgxNDMkajUwJGwwJGgw"); } }
-      .image-3 { z-index: 3; &::before { background-image: url("https://images.pexels.com/photos/6814536/pexels-photo-6814536.jpeg?_gl=1*1q3mx7l*_ga*NzI3MTU2MDQ5LjE3NzY1NTk4MDA.*_ga_8JE65Q40S6*czE3Nzc0MjczMTMkbzckZzEkdDE3Nzc0MjgxOTgkajU5JGwwJGgw"); } }
-      .image-4 { z-index: 2; &::before { background-image: url("https://images.pexels.com/photos/33121483/pexels-photo-33121483.jpeg?_gl=1*1k5kmcv*_ga*NzI3MTU2MDQ5LjE3NzY1NTk4MDA.*_ga_8JE65Q40S6*czE3Nzc0MjczMTMkbzckZzEkdDE3Nzc0MjgyNDckajEwJGwwJGgw"); } }
+      .image-1 { z-index: 5; &::before { background-image: url("https://images.pexels.com/photos/29708270/pexels-photo-29708270.jpeg"); } }
+      .image-2 { z-index: 4; &::before { background-image: url("https://images.pexels.com/photos/31748015/pexels-photo-31748015.jpeg"); } }
+      .image-3 { z-index: 3; &::before { background-image: url("https://images.pexels.com/photos/6814536/pexels-photo-6814536.jpeg"); } }
+      .image-4 { z-index: 2; &::before { background-image: url("https://images.pexels.com/photos/33121483/pexels-photo-33121483.jpeg"); } }
       .image-5 { z-index: 1; &::before { background-image: url("https://images.pexels.com/photos/37215400/pexels-photo-37215400.jpeg"); } }
     }
   }
 }
 
 @media (max-width: 900px) {
-  .empathize-title-content {
-    .empathize-title {
+  .prototype-title-content {
+    .prototype-title {
       font-size: 2.2rem;
     }
     height: auto;
     padding: 40px 10px;
   }
-  .empathize-content {
+  .prototype-content {
     height: auto;
   }
 }
 
 @media (max-width: 600px) {
-  .empathize-title-content {
-    .empathize-title {
+  .prototype-title-content {
+    .prototype-title {
       font-size: 1.2rem;
     }
     padding: 20px 5px;
